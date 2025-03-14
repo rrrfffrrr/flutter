@@ -218,6 +218,9 @@ public class KeyboardManager
 
   @Override
   public boolean handleEvent(@NonNull KeyEvent keyEvent) {
+    if (keyEvent.getKeyCode() == KeyEvent.KEYCODE_HEADSETHOOK) {
+        return false;
+    }
     final boolean isRedispatchedEvent = redispatchedEvents.remove(keyEvent);
     if (isRedispatchedEvent) {
       return false;
